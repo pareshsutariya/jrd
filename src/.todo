@@ -1,0 +1,64 @@
+## Project Tasks:
+--------------------------------------------------------------------
+- CRUD : Alteration
+        -> Implement Entity
+        -> Implement Repo 
+        -> Implement REST Controller
+        -> Validation
+        -> Exception Handling 
+        -> Testing using Postman
+        -> Testing using H2 db
+        -> Testing using nUnit
+
+- CRUD : Ticket
+        - Implement Entity
+        - Implement Repo
+        - Implement REST Controller
+        - Validation
+        - Exception Handling        
+        - Testing using Postman
+        - Testing using H2 db
+        - Testing using nUnit
+
+- Report : 
+        - Implement Entity
+        - Implement Repo
+        - Implement REST Controller
+        - Validation
+        - Exception Handling        
+        - Testing using Postman
+        - Testing using H2 db
+        - Testing using nUnit
+
+## Project Setup:
+--------------------------------------------------------------------
+-> Prepare project with dependencies
+-> Check in to Git
+-> Enable H2
+-> Logging enable/disable
+-> Exceptional handling
+-> Commandline runner
+-> Swagger
+-> HATEOS
+-> Content Negotiation (Jackson)
+- Properties to Configuration
+- Actuator
+- Versioning control
+- RestTemplate to call external REST endpoints
+- Feign
+- Basic Authentication
+- OneToMany
+- Function, Predicate, Consumer, Supplier, BinaryOperator, UnaryOperator, stream, map, reduce, collect 
+- Deployment
+ 
+
+## Dependencies:
+--------------------------------------------------------------------
+-> Spring Web
+-> Spring Security
+-> Spring Data JPA
+-> Developer Tools
+-> H2 Database
+-> MySQL Driver
+
+## --------------------------------------------------------------------

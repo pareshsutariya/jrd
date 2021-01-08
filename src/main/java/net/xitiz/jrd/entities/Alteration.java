@@ -15,7 +15,7 @@ public class Alteration {
     private int id;
 
     @ApiModelProperty(notes = "Name should be atleast 2 characters long")
-    @Size(min = 2)
+    @Size(min = 2, max = 25, message = "Name should be atleast 2 characters long, and max 25 characters")
     private String name;
     private Boolean isDeleted = false;
 
