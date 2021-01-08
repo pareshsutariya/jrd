@@ -10,7 +10,7 @@ public class JrdApplication {
 		SpringApplication.run(JrdApplication.class, args);
 
 		System.out.println("====== Welcome =======");
-		System.out.println("====== Hello....from Java World !! =======");
+		System.out.println("====== Hello.....from Java World !!! =======");
 	}
 
 }
