@@ -8,7 +8,7 @@
         -> Exception Handling 
         -> Testing using Postman
         -> Testing using H2 db
-        -> Testing using nUnit
+        - Testing using nUnit
 
 - CRUD : Ticket
         - Implement Entity
