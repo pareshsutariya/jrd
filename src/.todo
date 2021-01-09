@@ -30,6 +30,15 @@
         - Testing using H2 db
         - Testing using nUnit
 
+-> Generic Exception handling
+-> Swagger 
+-> Basic Authentication
+- 
+- Integrate with MySQL
+- Integrate with Angular
+- Deployment to Server/AWS
+- Monitoring with Spring Boot Actuator
+
 ## Project Setup:
 --------------------------------------------------------------------
 -> Prepare project with dependencies
