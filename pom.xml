@@ -84,6 +84,7 @@
 	</dependencies>
 
 	<build>
+		<finalName>XitizNet-JRD</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
