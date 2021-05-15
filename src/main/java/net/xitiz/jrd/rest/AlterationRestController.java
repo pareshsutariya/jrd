@@ -4,6 +4,7 @@ package net.xitiz.jrd.rest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -32,12 +33,10 @@ public class AlterationRestController {
 
     @GetMapping("/{id}")
     public Alteration findById(@PathVariable int id) {
-        var item = repo.findById(id);
+        var item = repo.findById(id)
+                .orElseThrow(() -> new AlterationNotFoundException("Alteration with given id " + id + " not found"));
 
-        if (!item.isPresent())
-            throw new AlterationNotFoundException("Alteration with given id " + id + " not found");
-
-        return item.get();
+        return item;
     }
 
     @PostMapping()
@@ -52,9 +51,9 @@ public class AlterationRestController {
 
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable int id) {
-        var item = repo.findById(id);
-        if (!item.isPresent())
-            throw new AlterationNotFoundException("Alteration with given id " + id + " not found");
-        repo.deleteById(id);
+        var item = repo.findById(id)
+                .orElseThrow(() -> new AlterationNotFoundException("Alteration with given id " + id + " not found"));
+                
+        repo.delete(item);
     }
 }

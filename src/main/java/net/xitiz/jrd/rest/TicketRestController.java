@@ -3,6 +3,7 @@ package net.xitiz.jrd.rest;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.rest.webmvc.ResourceNotFoundException;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,11 +30,9 @@ public class TicketRestController {
 
     @GetMapping("/{id}")
     public Ticket findById(@PathVariable int id) throws Exception {
-        var entity = repo.findById(id);
-        if (!entity.isPresent())
-            throw new Exception("Ticket not found for the given id : " + id);
+        var entity = repo.findById(id).orElseThrow(()-> new ResourceNotFoundException("Ticket not found for the given id : " + id));
 
-        return entity.get();
+        return entity;
     }
 
     @PostMapping()
@@ -48,11 +47,8 @@ public class TicketRestController {
 
     @DeleteMapping("/{id}") 
     public void delete(@PathVariable int id) throws Exception {
-        var item = repo.findById(id);
+        var item = repo.findById(id).orElseThrow(()-> new ResourceNotFoundException("Ticket not found for the given id : " + id));
         
-        if (!item.isPresent())
-            throw new Exception("Ticket not found for the given id : " + id);
-
-        repo.deleteById(id);
+        repo.delete(item);
     }
 }
