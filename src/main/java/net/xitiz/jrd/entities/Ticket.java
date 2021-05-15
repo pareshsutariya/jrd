@@ -2,6 +2,7 @@ package net.xitiz.jrd.entities;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,6 +16,7 @@ public class Ticket {
     
     private String salesman;
 
+    @Column(name = "Ticket_Number")
     private int ticketNumber;
 
     private String client;
@@ -25,8 +27,10 @@ public class Ticket {
 
     private float charge;
     
+    @Column(name = "Due_Date")
     private Date dueDate;
 
+    @Column(name = "Is_Deleted")
     private boolean isDeleted;
 
     public int getId() {

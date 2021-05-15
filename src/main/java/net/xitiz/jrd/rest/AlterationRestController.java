@@ -1,3 +1,4 @@
+
 package net.xitiz.jrd.rest;
 
 import java.util.List;
@@ -21,12 +22,12 @@ public class AlterationRestController {
     @Autowired
     AlterationRepository repo;
 
-    @GetMapping("/alterations")
+    @GetMapping("/api/alterations")
     public List<Alteration> findAll() {
         return repo.findAll();
     }
 
-    @GetMapping("/alterations/{id}")
+    @GetMapping("/api/alterations/{id}")
     public Alteration findById(@PathVariable int id) {
         var item = repo.findById(id);
 
@@ -36,17 +37,17 @@ public class AlterationRestController {
         return item.get();
     }
 
-    @PostMapping("/alterations")
+    @PostMapping("/api/alterations")
     public Alteration save(@RequestBody Alteration alt) {
         return repo.save(alt);
     }
 
-    @PutMapping("/alterations/{id}")
+    @PutMapping("/api/alterations/{id}")
     public Alteration save(@PathVariable int id, @RequestBody Alteration alt) {
         return repo.save(alt);
     }
 
-    @DeleteMapping("/alterations/{id}")
+    @DeleteMapping("/api/alterations/{id}")
     public void deleteById(@PathVariable int id) {
         var item = repo.findById(id);
         if (!item.isPresent())

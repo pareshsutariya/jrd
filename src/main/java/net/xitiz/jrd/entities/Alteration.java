@@ -1,5 +1,6 @@
 package net.xitiz.jrd.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,6 +18,8 @@ public class Alteration {
     @ApiModelProperty(notes = "Name should be atleast 2 characters long")
     @Size(min = 2, max = 25, message = "Name should be atleast 2 characters long, and max 25 characters")
     private String name;
+
+    @Column(name = "Is_Deleted")
     private Boolean isDeleted = false;
 
     public Alteration() {

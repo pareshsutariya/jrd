@@ -3,6 +3,7 @@ package net.xitiz.jrd;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import net.xitiz.jrd.entities.Alteration;
 import net.xitiz.jrd.repositories.AlterationRepository;
 
+@Disabled
 @ExtendWith(SpringExtension.class)
 @SpringBootTest(classes = JrdApplication.class)
 public class AlterationRepositoryTests {
