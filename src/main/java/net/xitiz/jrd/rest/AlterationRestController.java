@@ -43,19 +43,27 @@ public class AlterationRestController {
 
     @PostMapping()
     public Alteration save(@RequestBody Alteration alt) {
-        return repo.save(alt);
+        try {
+            return repo.save(alt);
+        } catch (Exception ex) {
+            throw new RuntimeException(ex.toString());
+        }
     }
 
     @PutMapping("/{id}")
     public Alteration save(@PathVariable int id, @RequestBody Alteration alt) {
-        return repo.save(alt);
+        try {
+            return repo.save(alt);
+        } catch (Exception ex) {
+            throw new RuntimeException(ex.toString());
+        }
     }
 
     @DeleteMapping("/{id}")
     public void deleteById(@PathVariable int id) {
         var item = repo.findById(id)
                 .orElseThrow(() -> new AlterationNotFoundException("Alteration with given id " + id + " not found"));
-                
+
         repo.delete(item);
     }
 }

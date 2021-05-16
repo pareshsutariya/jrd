@@ -32,25 +32,35 @@ public class TicketRestController {
 
     @GetMapping("/{id}")
     public Ticket findById(@PathVariable int id) throws Exception {
-        var entity = repo.findById(id).orElseThrow(()-> new ResourceNotFoundException("Ticket not found for the given id : " + id));
+        var entity = repo.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Ticket not found for the given id : " + id));
 
         return entity;
     }
 
     @PostMapping()
     public Ticket post(@RequestBody Ticket ticket) {
-        return repo.save(ticket);
+        try {
+            return repo.save(ticket);
+        } catch (Exception ex) {
+            throw new RuntimeException(ex.toString());
+        }
     }
 
     @PutMapping("/{id}")
     public Ticket put(@PathVariable int id, @RequestBody Ticket ticket) {
-        return repo.save(ticket);
+        try {
+            return repo.save(ticket);
+        } catch (Exception ex) {
+            throw new RuntimeException(ex.toString());
+        }
     }
 
-    @DeleteMapping("/{id}") 
+    @DeleteMapping("/{id}")
     public void delete(@PathVariable int id) throws Exception {
-        var item = repo.findById(id).orElseThrow(()-> new ResourceNotFoundException("Ticket not found for the given id : " + id));
-        
+        var item = repo.findById(id)
+                .orElseThrow(() -> new ResourceNotFoundException("Ticket not found for the given id : " + id));
+
         repo.delete(item);
     }
 }
